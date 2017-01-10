@@ -1,0 +1,270 @@
+<section ng-controller="AddLessonController">
+	<section class="m-t-20 m-b-30">
+    <div class="container">
+        <h3 class="text-page m-b-30"><strong>Add Lesson</strong></h3>
+        <div class="panel padd-min">
+            <div class="panel-heading">
+                <h3 class="text-page m-l-15 m-t-15 m-b-0"><strong>Lesson Name</strong></h3>
+            </div>
+            
+            <div class="panel-body">
+                <div class=" form">
+                    <form class="cmxform form-horizontal tasi-form" id="commentForm" method="get" action="#" novalidate="novalidate">
+                        <div class="container-fluid">
+                            
+                            <div class="form-group">
+                                <div class="col-lg-2">
+                                    <div class="m-l-10 m-r-10">
+                                        <label for="lname" class="control-label text-left text-page">Lesson Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <div class="m-l-10 m-r-10">
+                                        <input class="text-page form-control lessonName" id="lname" name="name" type="text" required="" aria-required="true" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-2">
+                                    <div class="m-l-10 m-r-10">
+                                        <label for="cdescription" class="control-label text-left text-page">Lesson Description</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <div class="m-l-10 m-r-10">
+                                        <textarea class="page-color text-page form-control lessonDescriprion" id="cdescription" name="description" type="text" required="" aria-required="true" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                        <div id="question">
+                            <div class="single firstVideo">
+                                <hr class="m-t-20 m-b-25">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <div class="m-l-10 m-r-10">
+                                                        <label for="fname" class="control-label text-left text-page">Video Label</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="m-l-10 m-r-10">
+                                                    <input class="text-page form-control videoLabel" id="fname" name="name" type="text" required="" aria-required="true" value="">
+                                                    </div>
+                                                </div>
+								</div>
+								<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <div class="m-l-10 m-r-10">
+                                                        <label for="lname" class="control-label text-left text-page">Video Embed Code</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-10">
+                                                    <div class="m-l-10 m-r-10">
+                                                    <textarea class="text-page form-control videoUrl" id="lname" name="name" type="text" required="" aria-required="true"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+								<input type="hidden" class="type" name="type" value="video">
+                                        </div>
+                                    </div>
+
+                                    <div class="m-l-5 m-r-5">
+                                        <div class="row">
+                                            
+                                            <div class="col-xs-12 text-right">
+                                                <span  class="remove btn btn-primary m-b-10 w-sm m-l-10">Remove</span>
+                                                <span  class="add-question btn btn-primary m-b-10 w-sm m-l-10">Add Question</span>
+									<span  class="add-video btn btn-primary m-b-10 w-sm m-l-10">Add Video</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+				
+				
+				<div class="single firstQuestion">
+                                <hr class="m-t-20 m-b-25">
+                                <div class="container-fluid">
+                                    <div class="m-l-10 m-r-10 q-choose">
+                                        <div class="form-group m-t-10">
+                                            <div class="col-sm-4 col-md-3 col-lg-2">
+                                                <label class="text-left text-page">Question Type</label>
+                                            </div>
+                                            <div class="col-sm-4 col-md-3 col-lg-2">
+                                                <label class="cr-styled text-page">
+                                                    <strong class="m-r-5">Multyple Choice</strong>
+                                                    <input type="radio" value="multipleChoice" class="r-question multipleChoice"> 
+                                                    <i class="fa"></i>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-4 col-md-3 col-lg-2">
+                                                <label class="cr-styled text-page">
+                                                    <strong class="m-r-5">Text Response</strong>
+                                                    <input type="radio" value="textResponce" class="r-question textResponce"> 
+                                                    <i class="fa"></i>
+                                                </label>
+                                            </div>
+                                            
+                                        </div> <!-- form-group -->
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-2">
+                                            <div class="m-l-10 m-r-10">
+                                                <label for="q-input" class="control-label text-left text-page">Question</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <div class="m-l-10 m-r-10">
+                                                <input class="form-control alert alert-question text-page questionText" role="alert" value="">
+                                            </div>
+                                        </div>
+                                        <div class="red box multipleChoiceBox">
+                                            <div class="multi-q">
+                                                <div class="answer-div">
+                                                    <div class="col-lg-2">
+                                                        <div class="m-l-10 m-r-10">
+                                                            <label for="q-input" class="control-label text-left text-page">Answer A</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10">
+                                                        <div class="m-l-10 m-r-10 answer-section">
+                                                            <input class="form-control alert alert-page text-page answerA" role="alert" value="">
+                                                            <label class="cr-styled">
+                                                                <input type="radio" class="multipleChoiceAnswer" value="option1">
+                                                                <i class="fa"></i> 
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="answer-div">
+                                                    <div class="col-lg-2">
+                                                        <div class="m-l-10 m-r-10">
+                                                            <label for="q-input" class="control-label text-left text-page">Answer B</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10">
+                                                        <div class="m-l-10 m-r-10 answer-section">
+                                                            <input class="form-control alert alert-page text-page answerB" role="alert" value="">
+                                                            <label class="cr-styled">
+                                                                <input type="radio" class="multipleChoiceAnswer" value="option2">
+                                                                <i class="fa"></i> 
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="answer-div">
+                                                    <div class="col-lg-2">
+                                                        <div class="m-l-10 m-r-10">
+                                                            <label for="q-input" class="control-label text-left text-page">Answer C</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10">
+                                                        <div class="m-l-10 m-r-10 answer-section">
+                                                            <input class="form-control alert alert-page text-page answerC" role="alert" value="">
+                                                            <label class="cr-styled" >
+                                                                <input type="radio" class="multipleChoiceAnswer" value="option3">
+                                                                <i class="fa"></i> 
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+							<input type="hidden" class="type" name="type" value="question">
+                                    </div>
+
+                                    <div class="m-l-5 m-r-5">
+                                        <div class="row">
+                                            
+                                            <div class="col-xs-12 text-right">
+                                                <span  class="remove btn btn-primary m-b-10 w-sm m-l-10">Remove</span>
+                                                <span  class="add-question btn btn-primary m-b-10 w-sm m-l-10">Add Question</span>
+                                                <span  class="add-video btn btn-primary m-b-10 w-sm m-l-10">Add Video</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+				
+				
+				
+                        </div>
+                                  
+                        <hr class="m-t-10 m-b-25">
+                        <div class="container-fluid">
+                            <div class="m-l-5 m-r-5">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <input type="submit" name="submit-btn" value="Cancel" class="btn btn-primary m-b-10 w-sm">
+                                    </div>
+                                    <div class="col-xs-8 text-right">
+                                        <input type="submit" name="submit-btn" value="Add Next Lesson" class="btn btn-primary m-b-10 w-sm">
+                                        <input type="submit" name="submit-btn" value="Save" class="btn btn-primary m-b-10 w-sm m-l-10">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+</section>
+
+<script type="text/javascript">
+var questionIndex = 0;
+$(document).ready(function(){
+	
+    $('body').on('click','.add-question',function(){
+			$('.firstQuestion').clone()
+			.removeClass('firstQuestion').insertAfter($(this).closest('.single')).end();
+				reindex();
+		});
+		
+		$('body').on('click','.add-video',function(){
+			$('.firstVideo').clone()
+			.removeClass('firstVideo').insertAfter($(this).closest('.single')).end();
+			reindex();
+		});
+		
+		$('body').on('click','.multipleChoice',function(){
+			if ($(this).is(':checked')) $(this).closest('.single').find('.multipleChoiceBox').show();
+		});
+		
+		$('body').on('click','.textResponce',function(){
+			if ($(this).is(':checked')) $(this).closest('.single').find('.multipleChoiceBox').hide();
+		});
+		
+		$('body').on('click','.remove',function(){
+			if ($('.single:visible').size() > 1)
+			{
+				$(this).closest('.single').remove();
+				reindex();
+			}
+		});	
+		
+		
+		$('.add-video:first').click();
+
+		function reindex()
+		{
+			var index = 0;
+			$('.single:visible').each(function(){
+				$(this).find('input.type').attr('name', 'object['+(index)+'][type]').end()
+				.find('.textResponce, .multipleChoice').attr('name', 'object['+(index)+'][questionType]').end()
+				.find('.multipleChoiceAnswer').attr('name', 'object['+(index)+'][multipleChoiceAnswer]').end()
+				.find('.videoLabel').attr('name', 'object['+(index)+'][videoLabel]').end()
+				.find('.videoUrl').attr('name', 'object['+(index)+'][videoUrl]').end()
+				.find('.questionText').attr('name', 'object['+(index)+'][questionText]').end()
+				.find('.answerA').attr('name', 'object['+(index)+'][answerA]').end()
+				.find('.answerB').attr('name', 'object['+(index)+'][answerB]').end()
+				.find('.answerC').attr('name', 'object['+(index)+'][answerC]').end();
+				index++;
+			});
+		}
+});
+</script>

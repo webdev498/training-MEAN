@@ -1,0 +1,36 @@
+<section ng-controller="StudentsController">
+  <section class="m-t-20 m-b-30">
+    <div class="container">
+      <h2 class="text-page m-b-30"><strong>My Courses</strong></h2>
+
+      <div class="panel panel-color course-panel full-panel panel-primary m-b-30" ng-repeat = "activeCourse in activeCourses" ng-click="lessonsPage(activeCourse._id)">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6">
+              <h3 class="m-t-10 m-b-10"><strong>{{activeCourse.name}}</strong></h3>
+            </div>
+            <div class="col-xs-6">
+              <h3 class="m-t-10 m-b-10 text-right"><strong>In progress, 34% Complete</strong></h3>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">{{activeCourse.description}}</div>
+      </div>
+
+      <div class="panel panel-color course-panel full-panel panel-primary m-b-30" ng-repeat = "archivedCourse in archivedCourses" ng-click="lessonsPage(archivedCourse.course._id)">
+        <div class="panel-heading panel-completed">
+          <div class="row">
+            <div class="col-xs-6">
+              <h3 class="m-t-10 m-b-10"><strong>{{archivedCourse.course.name}}</strong></h3>
+            </div>
+            <div class="col-xs-6">
+              <!-- <h3 class="m-t-10 m-b-10 text-right">Completed, 2nd March 2016, Score 96%</h3> -->
+              <h3 class="m-t-10 m-b-10 text-right">Completed, {{archivedCourse.lastActivity}}, Score {{archivedCourse.score}}%</h3>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">{{archivedCourse.course.description}}</div>
+      </div>
+    </div>
+  </section>
+</section>

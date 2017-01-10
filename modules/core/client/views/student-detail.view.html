@@ -1,0 +1,187 @@
+<section ng-controller="StudentDetailController">
+	<section class="m-t-20 m-b-30">
+	  <div class="container">
+	    <h2 class="text-page m-b-30">
+	    	<strong>{{student.firstName}} {{student.lastName}}</strong>
+	    </h2>
+	    <ul class="nav nav-tabs nav-justified">
+        <li class="active">
+          <a href="#profile" data-toggle="tab" aria-expanded="false"><strong class="text-page">Profile</strong></a>
+        </li>
+        <li class="">
+          <a href="#courses" data-toggle="tab" aria-expanded="true"><strong class="text-page">Courses</strong></a>
+        </li>
+	    </ul>
+	    <div class="tab-content">
+        <div class="tab-pane active" id="profile">
+          <h3 class="text-page m-b-10 m-l-10 m-t-0">
+            <strong>Student Details</strong>
+          </h3>              
+          <hr class="m-b-30">     
+          <div class=" form">
+            <form class="cmxform form-horizontal tasi-form" name="commentForm" novalidate="novalidate" ng-submit="updateStudent()">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <div class="col-lg-2">
+                        <div class="m-l-10 m-r-10">
+                          <label for="fname" class="control-label text-left text-page">First Name</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="m-l-10 m-r-10">
+                        	<input class=" form-control" id="fname" name="name" type="text" ng-model="currentstudent.firstName" required="" aria-required="true" placeholder="Some text value...">
+                        </div>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="m-l-10 m-r-10">
+                          <label for="lname" class="control-label text-left text-page">Last Name</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="m-l-10 m-r-10">
+                        	<input class=" form-control" id="lname" name="name" type="text" ng-model="currentstudent.lastName" required="" aria-required="true" placeholder="Some text value...">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <div class="m-l-10 m-r-10">
+                      <label for="uname" class="control-label text-left text-page">Username</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-10">
+                    <div class="m-l-10 m-r-10">
+                      <input class=" form-control" id="uname" name="name" type="text" ng-model="currentstudent.username" required="" aria-required="true" placeholder="Some text value...">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <div class="m-l-10 m-r-10">
+                      <label for="password" class="control-label text-left text-page">Password</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-10">
+                    <div class="m-l-10 m-r-10">
+                      <input class=" form-control" id="password" name="name" type="password" ng-model="currentstudent.rawPassword" required="" aria-required="true" placeholder="" value="fdafda5665">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <div class="m-l-10 m-r-10">
+                      <label for="dob" class="control-label text-left text-page">DOB</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-10">
+                    <div class="m-l-10 m-r-10">
+                      <input class=" form-control" id="dob" name="name" type="text" ng-model="currentstudent.dob" required="" aria-required="true" placeholder="Some text value...">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <div class="m-l-10 m-r-10">
+                      <label for="dob" class="control-label text-left text-page">Phone Number</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-10">
+                    <div class="m-l-10 m-r-10">
+                      <input class=" form-control" id="dob" name="name" type="text" ng-model="currentstudent.phoneNumber" required="" aria-required="true" placeholder="Some text value...">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                      
+                  </div>
+                  <div class="col-lg-10">
+                    <div class="m-l-10 m-r-10">
+                      <label class="cr-styled">
+                        <input type="checkbox" ng-model="remove_student">
+                        <i class="fa"></i>
+                        <strong class="m-r-5 text-page">Remove Student</strong>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="white-space m-t-30 m-b-30">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <span class="sr-only">Empty Space</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="m-l-5 m-r-5">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <input type="button" name="submit-btn" value="Back" class="btn btn-primary m-b-10 w-sm" ng-click="back()">
+                    </div>
+                    <div class="col-xs-8 text-right">
+                      <input type="submit" name="submit-btn" value="Save" class="btn btn-primary m-b-10 w-sm">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>                                   
+        </div>
+        <div class="tab-pane" id="courses">
+          <div class="table-responsive">
+            <table class="table text-page">
+              <thead>
+                  <tr>
+                    <th>Course Name</th>
+                    <th class="text-center">Completed</th>
+                    <th class="text-center">Scroe</th>
+                    <th class="text-center">Completion Date</th>
+                    <th class="text-center">Certificate</th>
+                  </tr>
+              </thead>
+              <tr ng-repeat = "archivedCourse in archivedCourses">
+                <td>
+                	<strong>{{archivedCourse.course.name}}</strong>
+                </td>
+                <td class="text-center">
+                	<strong>Yes</strong>
+                </td>
+                <td class="text-center">
+                	<strong>{{archivedCourse.score}}%</strong>
+                </td>
+                <td class="text-center">
+                	<strong>{{archivedCourse.lastActivity}}</strong>
+                </td>
+                <td class="text-center">
+                	<button class="btn btn-primary w-sm" ng-click="certificate($index)">
+                		<strong>View</strong>
+                	</button>
+               </td>
+              </tr>
+
+              <tr ng-repeat = "activeCourse in activeCourses">
+                <td>
+                	<strong>{{activeCourse.name}}</strong>
+                </td>
+                <td class="text-center">
+                	<strong>No</strong>
+                </td>
+                <td class="text-center">
+                	<strong></strong>
+                </td>
+                <td class="text-center">
+                	<strong></strong>
+                </td>
+                <td class="text-center">
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+	    </div>
+		</div>
+	</section>	
+</section>

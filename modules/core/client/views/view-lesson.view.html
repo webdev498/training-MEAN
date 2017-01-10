@@ -1,0 +1,51 @@
+<section ng-controller="ViewLessonController">
+	<section class="m-t-20 m-b-30">
+		<div class="container v-container">
+			<div class="row vertical-align">
+				<h2 class="text-page col-md-10"><strong>{{lesson.name}}</strong></h2>
+				<h4 class="text-page col-md-2">
+					<span class="pull-right" ng-show="lesson.videos.length > 0">Lesson 1 of {{lesson.videos.length}}</span>
+				</h4>
+			</div>
+		</div>
+		<div class="vsection-bg">
+			<div class="videolesson-section v-container container m-b-10">
+				<script src="https://fast.wistia.com/embed/medias/qr2aq0t9f0.jsonp" async></script>
+				<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+
+				<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+					<div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+						<div id="my_video" class="wistia_embed wistia_async_qr2aq0t9f0 videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
+					</div>
+				</div>
+
+				<script>
+					
+				</script>
+
+				<script type="text/javascript">
+					var myVideo ; 
+					window.wistiaInit = function(W) {
+					  myVideo = W.api("my_video");
+					  myVideo.bind("end",function () {
+					  	console.log("Video is finished");
+					  	$(".next-button")[0].click();
+					  });
+					};
+				</script>
+			</div>
+		</div>
+		<div class="container v-container">
+			<div class="row vertical-align bottom">
+				<div class="col-md-6">
+					<a href="javascript:void(0)" class="btn btn-primary" ng-click="back()">Back</a>
+				</div>
+				<div class="col-md-6">
+					<h4 class="text-page pull-right">Questions will appear after the video. &nbsp;&nbsp;
+						<a href="javascript:void(0)" class="btn btn-primary next-button" ng-click="next()">Next</a>
+					</h4>
+				</div>
+			</div>
+		</div>   
+  </section>
+</section>

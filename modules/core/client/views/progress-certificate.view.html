@@ -1,0 +1,73 @@
+<section ng-controller="ProgressCertificateController">
+	<div class="jumbotron">
+		<div class="container">
+			<br>
+			<br>
+			<div class="row">
+				<div class="col-md-5">
+					<ul class="tab-top-table" >
+						<li ng-click="tabIndex = 1" ng-class="tabIndex === 1 ? 'active' : ''"><a href="">Active Courses</a></li>
+						<li ng-click="tabIndex = 2" ng-class="tabIndex === 2 ? 'active' : ''"><a href="">Archived Course</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="row" ng-if="tabIndex == 1">
+				<div class="col-sm-12">
+					<table class="table table-striped student-table">
+						<thead>
+							<tr>
+								<th width="55%">Course</th>
+								<th width="25%">Enrolled Students</th>
+								<th width="20%">Past Students</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat = "activeCourse in activeCourses">
+								<td>{{activeCourse.name}}</td>
+								<td>{{getEnrolledStudents(activeCourse._id)}}</td>
+								<td>{{getPastStudents(activeCourse._id)}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row" ng-if="tabIndex == 2">
+				<div class="col-sm-12">
+					<table class="table table-striped student-table">
+						<thead>
+							<tr>
+								<th width="50%">Course</th>
+								<th width="10%">Progress</th>
+								<th width="5%">Score</th>
+								<th width="25%">Last Activity</th>
+								<th width="10%"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat = "archivedCourse in archivedCourses">
+								<td>{{archivedCourse.course.name}}</td>
+								<td>{{archivedCourse.status}}</td>
+								<td>{{archivedCourse.score}}%</td>
+								<td>{{archivedCourse.lastActivity}}</td>
+								<td>
+									<button class ="btn btn-default sbmt-small-btn" ng-click="certificate($index)"><i class="fa fa-refresh fa-spin" ng-show="certificating" style="margin-right: 5px;"></i> Certificate</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4 col-xs-12 text-center big-link">
+					<br><br><br>
+					<a href="javascript:void(0)" ng-click="back()"><i class="fa fa-arrow-left"></i> Back</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

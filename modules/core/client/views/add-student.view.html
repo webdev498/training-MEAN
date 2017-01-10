@@ -1,0 +1,122 @@
+<section ng-controller="AddStudentController">
+	<section class="m-t-20 m-b-30">
+    <div class="container">
+      <h3 class="text-page m-b-30"><strong>Add Student</strong></h3>
+      <div class="panel padd-min">
+        <div class="panel-heading">
+          <h3 class="text-page m-l-15 m-t-15"><strong>Student Details</strong></h3>
+        </div>
+          
+        <div class="panel-body">
+          <div class=" form">
+            <form name="addstudentForm" ng-submit="addStudent(addstudentForm.$valid)" class="cmxform form-horizontal tasi-form" novalidate autocomplete="off">
+            	<div ng-show="error" class="text-center text-danger">
+								<strong ng-bind="error"></strong>
+							</div>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <div class="col-lg-2">
+                        <div class="m-l-10 m-r-10">
+                          <label for="firstName" class="control-label text-left text-page">First Name</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="m-l-10 m-r-10">
+                        	<input type="text" id="firstName" name="firstName" class="form-control" ng-model="student.firstName" placeholder="First Name" required>
+								          <div ng-messages="studentForm.firstName.$error" role="alert">
+								            <p class="help-block error-text" ng-message="required">First name is required.</p>
+								          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="m-l-10 m-r-10">
+                          <label for="lastName" class="control-label text-left text-page">Last Name</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="m-l-10 m-r-10">
+                        	<input type="text" id="lastName" name="lastName" class="form-control" ng-model="student.lastName" placeholder="Last Name" required>
+					                <div ng-messages="studentForm.lastName.$error" role="alert">
+					                  <p class="help-block error-text" ng-message="required">Last name is required.</p>
+					                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                      <div class="m-l-10 m-r-10">
+                        <label for="username" class="control-label text-left text-page">Username</label>
+                      </div>
+                    </div>
+                    <div class="col-lg-10">
+                      <div class="m-l-10 m-r-10">
+                        <input type="text" id="username" name="username" class="form-control" ng-model="student.username" placeholder="Username">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <div class="m-l-10 m-r-10">
+                      <label for="password" class="control-label text-left text-page">Password</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-10">
+                    <div class="m-l-10 m-r-10">
+                      <input type="password" id="password" name="password" class="form-control" ng-model="student.password" placeholder="Password">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <div class="m-l-10 m-r-10">
+                      <label for="dob" class="control-label text-left text-page">DOB</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-10">
+                    <div class="m-l-10 m-r-10">
+                      <input type="text" id="dob" name="dob" class="form-control" placeholder="Date of Birth">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <div class="m-l-10 m-r-10">
+                      <label for="phoneNumber" class="control-label text-left text-page">Phone Number</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-10">
+                    <div class="m-l-10 m-r-10">
+                      <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" ng-model="student.phoneNumber" placeholder="Phone Number">
+                    </div>
+                  </div>
+                </div>
+                <div class="white-space m-t-30 m-b-30">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <span class="sr-only">Empty Space</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="m-l-5 m-r-5">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <input type="button" name="submit-btn" value="Back" class="btn btn-primary m-b-10 w-sm" ng-click="back()">
+                    </div>
+                    <div class="col-xs-8 text-right">
+                      <input type="button" name="submit-btn" value="Cancel" class="btn btn-primary m-b-10 w-sm" ng-click="back()">
+                      <input type="submit" name="submit-btn" value="Save" class="btn btn-primary m-b-10 w-sm m-l-15">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>           
+  </section>
+</section>

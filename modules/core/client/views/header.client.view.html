@@ -1,0 +1,11 @@
+<div class="container">
+  <ul class="list-inline navbar-right top-menu top-right-menu color-white" ng-show="authentication.user">
+    <li>
+        <a href="/">{{authentication.user.displayName}}</a>
+    </li>
+    <li>|</li>
+    <li>
+        <a href="/api/auth/signout" target="_self">Logout<i class="ion-log-out m-l-10"></i></a>
+    </li>
+  </ul>
+</div>

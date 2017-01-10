@@ -1,0 +1,114 @@
+<section ng-controller="LessonQuestionController">
+  <!-- Section for single question !-->
+	<section class="m-t-20 m-b-30">
+    <div class="container">
+      <h2 class="text-page m-b-30"><strong>{{lesson.name}}</strong></h2>
+      <div class="panel panel-default text-page padd-min">
+        <div class="panel-heading m-b-30 m-c-30">
+          <h3 class="text-page m-l-15 m-t-15"><strong>Question</strong></h3>
+        </div>
+          
+        <form class="text-page text-left m-l-15 m-r-15">
+          <h4 class="m-b-30 m-t-30">
+            <strong>Why should you not leave obstructions in corridors?</strong>
+          </h4>
+          <div class="form-group">
+            <textarea class="form-control">
+                
+            </textarea>
+          </div>
+                
+        </form>
+        <div class="white-space m-t-30 m-b-30">
+          <div class="row">
+            <div class="col-xs-12">
+              <span class="sr-only">Empty Space</span>
+            </div>
+          </div>
+        </div>
+        <div class="white-space m-t-30 m-b-30">
+          <div class="row">
+            <div class="col-xs-12">
+              <span class="sr-only">Empty Space</span>
+            </div>
+          </div>
+        </div>
+        <div class="m-l-5 m-r-5">
+          <div class="row">
+            <div class="col-xs-6 text-left">
+              <input type="button" name="submit-btn" value="Back" class="btn btn-primary m-b-10 w-sm" ng-click="back()">
+            </div>
+            <div class="col-xs-6 text-right">
+              <input type="submit" name="submit-btn" value="Next" class="btn btn-primary m-b-10 w-sm" ng-click="next()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>   
+  </section>
+
+  <!-- Section for multiple question !-->
+  <section class="m-t-20 m-b-30">
+    <div class="container">
+      <h2 class="text-page m-b-30"><strong>{{lesson.name}}</strong></h2>
+      <div class="panel panel-default text-page padd-min">
+        <div class="panel-heading m-b-30 m-c-30">
+          <h3 class="text-page m-l-15 m-t-15"><strong>Question</strong></h3>
+        </div>
+          
+        <form class="text-page text-left m-l-15 m-r-15">
+          <h4 class="m-b-30 m-t-30">
+            <strong>When should a qualified first aider on duty?</strong>
+          </h4>
+          <div class="form-group">
+            <div class="radio-box m-t-20">
+              <label class="cr-styled" for="answer1">
+                <input type="radio" name="answer2" id="answer1" value="answer1">
+                <i class="fa"></i>
+                <strong class="m-l-10">Sometimes</strong>
+              </label>
+            </div>
+            <div class="radio-box m-t-20">
+              <label class="cr-styled" for="answer2">
+                <input type="radio" name="answer2" id="answer2" value="answer2">
+                <i class="fa"></i>
+                <strong class="m-l-10">Often</strong>
+              </label>
+            </div>
+            <div class="radio-box m-t-20">
+              <label class="cr-styled" for="answer3">
+                <input type="radio" name="answer2" id="answer3" value="answer3">
+                <i class="fa"></i>
+                <strong class="m-l-10">Never</strong>
+              </label>
+            </div>
+          </div>
+        </form>
+        <div class="white-space m-t-30 m-b-30">
+          <div class="row">
+            <div class="col-xs-12">
+              <span class="sr-only">Empty Space</span>
+            </div>
+          </div>
+        </div>
+        <div class="white-space m-t-30 m-b-30">
+          <div class="row">
+            <div class="col-xs-12">
+              <span class="sr-only">Empty Space</span>
+            </div>
+          </div>
+        </div>
+        <div class="m-l-5 m-r-5">
+          <div class="row">
+            <div class="col-xs-6 text-left">
+              <input type="submit" name="submit-btn" value="Back" class="btn btn-primary m-b-10 w-sm">
+            </div>
+            <div class="col-xs-6 text-right">
+              <input type="submit" name="submit-btn" value="Next" class="btn btn-primary m-b-10 w-sm">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>   
+  </section>
+</section>

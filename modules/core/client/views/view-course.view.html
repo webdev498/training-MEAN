@@ -1,0 +1,70 @@
+<section ng-controller="ViewCourseController">
+	<section class="m-t-20 m-b-30">
+    <div class="container">
+      <h2 class="text-page m-b-0"><strong>{{course.name}}</strong></h2>
+      <h4 class="text-page m-b-30 m-t-0">
+      	<strong ng-if="lessons.length == 0">No Lessons</strong>
+				<strong ng-if="lessons.length == 1">{{lessons.length}} Lesson</strong>
+				<strong ng-if="lessons.length > 1">{{lessons.length}} Lessons</strong>
+      </h4>
+      <ul class="list-unstyled h-list">
+        <li ng-repeat = "lesson in lessons" ng-if="lesson.lesson_status == 'completed'">
+          <a href="#" class="block-btn color-white">
+            <div class="row">
+              <div class="col-sm-5">
+                {{$index + 1}} {{lesson.name}}
+              </div>
+              <div class="col-sm-5 text-right">
+                <i class="ion-checkmark-round m-r-5"></i> Completed {{lesson.lesson_completedDate}}
+              </div>
+              <div class="col-sm-2 text-right">
+                <i class="fa fa-film m-r-5"></i>
+                <span ng-if="lesson.videos.length == 0">No Videos</span>
+								<span ng-if="lesson.videos.length == 1">{{lesson.videos.length}} Video</span>
+								<span ng-if="lesson.videos.length > 1">{{lesson.videos.length}} Videos</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li ng-repeat = "lesson in lessons" ng-if="lesson.lesson_status == 'progress'" ng-click="lessonPage(lesson._id)">
+          <a href="#" class="block-btn color-white">
+            <div class="row">
+              <div class="col-sm-5">
+                {{$index + 1}} {{lesson.name}}
+              </div>
+              <div class="col-sm-5 text-right">
+                in progress
+              </div>
+              <div class="col-sm-2 text-right">
+                <i class="fa fa-film m-r-5"></i>
+                <span ng-if="lesson.videos.length == 0">No Videos</span>
+								<span ng-if="lesson.videos.length == 1">{{lesson.videos.length}} Video</span>
+								<span ng-if="lesson.videos.length > 1">{{lesson.videos.length}} Videos</span> 
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li  ng-repeat = "lesson in lessons" ng-if="lesson.lesson_status == 'assigned'" ng-click="lessonPage(lesson._id)">
+          <a href="#" class="block-btn color-white">
+            <div class="row">
+              <div class="col-sm-5">
+                {{$index + 1}} {{lesson.name}} <i class="ion-locked m-l-10"></i>
+              </div>
+              <div class="col-sm-5 text-right">
+                  
+              </div>
+              <div class="col-sm-2 text-right">
+                <i class="fa fa-film m-r-5"></i>
+                <span ng-if="lesson.videos.length == 0">No Videos</span>
+								<span ng-if="lesson.videos.length == 1">{{lesson.videos.length}} Video</span>
+								<span ng-if="lesson.videos.length > 1">{{lesson.videos.length}} Videos</span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

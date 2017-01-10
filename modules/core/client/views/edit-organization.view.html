@@ -1,0 +1,184 @@
+<section ng-controller="EditOrganizationController">
+	<!-- <div class="jumbotron">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-sm-12">
+					<h1 class="">Edit Organization</h1>
+				</div>
+			</div>
+
+			<div class="row new-form">
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label for=" ">First Name</label>
+						<input type="text" placeholder=" "   class="form-control" ng-model="tutor.firstName">
+					</div> 
+					<div class="form-group">
+						<label for=" ">Last Name</label>
+						<input type="text" placeholder=" "  class="form-control"  ng-model="tutor.lastName">
+					</div> 
+					<div class="form-group">
+						<label for=" ">Email</label>
+						<input type="email" placeholder=" "  class="form-control"  ng-model="tutor.email">
+					</div> 
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for=" ">Phone Number</label>
+						<input type="text" placeholder=" "  class="form-control"  ng-model="tutor.phoneNumber">
+					</div> 
+					<div class="form-group">
+						<label for=" ">Company/Organization</label>
+						<input type="text" placeholder=" "   class="form-control"  ng-model="tutor.company">
+					</div> 
+					<div class="form-group">
+						<label for=" ">Name of Home/Department</label>
+						<input type="text" placeholder=" "  class="form-control"  ng-model="tutor.department">
+					</div> 
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-sm-12">
+					<button class="btn btn-default sbmt-big-btn" type="submit" ng-click="updateTutor()"><i class="fa fa-refresh fa-spin" ng-show="updatingTutor" style="margin-right: 5px;"></i> Save</button>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+
+			<div class="row text-left big-link" >
+				<div class="col-sm-12">
+					<a href="javascript:void(0)" ng-click="back()"><i class="fa fa-arrow-left"></i> Cancel</a>
+				</div>
+			</div>
+			<br>
+			<br>
+		</div>
+	</div> -->
+
+	<section class="m-t-20 m-b-30">
+    <div class="container">
+      <h3 class="text-page m-b-30"><strong>Edit Organization</strong></h3>
+      <div class="panel padd-min">
+        <div class="panel-heading">
+          <h3 class="text-page m-l-15 m-t-15"><strong>Organization Name</strong></h3>
+        </div>
+          
+        <div class="panel-body">
+          <div class=" form">
+            <form class="cmxform form-horizontal tasi-form" id="commentForm" name="updateForm" ng-submit="updateTutor(updateForm.$valid)" novalidate>
+              <div class="container-fluid">
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <div class="form-group">
+                              <div class="col-lg-2">
+                                  <div class="m-l-10 m-r-10">
+                                      <label for="fname" class="control-label text-left text-page">First Name</label>
+                                  </div>
+                              </div>
+                              <div class="col-lg-4">
+                                  <div class="m-l-10 m-r-10">
+                                  <input class="text-page form-control" id="fname" name="name" type="text" required="" aria-required="true" value="Some text value..." ng-model="tutor.firstName">
+                                  </div>
+                              </div>
+                              <div class="col-lg-2">
+                                  <div class="m-l-10 m-r-10">
+                                      <label for="lname" class="control-label text-left text-page">Last Name</label>
+                                  </div>
+                              </div>
+                              <div class="col-lg-4">
+                                  <div class="m-l-10 m-r-10">
+                                  <input class="text-page form-control" id="lname" name="name" type="text" required="" aria-required="true" value="Some text value..." ng-model="tutor.lastName">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-lg-2">
+                          <div class="m-l-10 m-r-10">
+                              <label for="email" class="control-label text-left text-page">Email</label>
+                          </div>
+                      </div>
+                      <div class="col-lg-10">
+                          <div class="m-l-10 m-r-10">
+                              <input class="text-page form-control" id="email" name="name" type="text" required="" aria-required="true" value="Some text value..." ng-model="tutor.email">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-lg-2">
+                          <div class="m-l-10 m-r-10">
+                              <label for="password" class="control-label text-left text-page">Password</label>
+                          </div>
+                      </div>
+                      <div class="col-lg-10">
+                          <div class="m-l-10 m-r-10">
+                              <input class="text-page form-control" id="password" name="name" type="password" required="" aria-required="true" ng-model="tutor.rawPassword">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-lg-2">
+                          <div class="m-l-10 m-r-10">
+                              <label for="phone" class="control-label text-left text-page">Phone</label>
+                          </div>
+                      </div>
+                      <div class="col-lg-10">
+                          <div class="m-l-10 m-r-10">
+                              <input class="text-page form-control" id="phone" name="name" type="text" required="" aria-required="true" value="Some text value..." ng-model="tutor.phoneNumber">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-lg-2">
+                          <div class="m-l-10 m-r-10">
+                              <label for="Organization" class="control-label text-left text-page">Organization</label>
+                          </div>
+                      </div>
+                      <div class="col-lg-10">
+                          <div class="m-l-10 m-r-10">
+                              <input class="text-page form-control" id="Organization" name="Organization" type="text" required="" aria-required="true" value="Some text value..." ng-model="tutor.company">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-lg-2">
+                          <div class="m-l-10 m-r-10">
+                              <label for="department" class="control-label text-left text-page">Department</label>
+                          </div>
+                      </div>
+                      <div class="col-lg-10">
+                          <div class="m-l-10 m-r-10">
+                              <input class="text-page form-control" id="department" name="department" type="text" required="" aria-required="true" value="Some text value..." ng-model="tutor.department">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="white-space m-t-30 m-b-30">
+                      <div class="row">
+                          <div class="col-xs-12">
+                              <span class="sr-only">Empty Space</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="m-l-5 m-r-5">
+                      <div class="row">
+                          <div class="col-xs-4">
+                              <input type="button" name="submit-btn" value="Back" class="btn btn-primary m-b-10 w-sm" ng-click="back()">
+                          </div>
+                          <div class="col-xs-8 text-right">
+                              <input type="button" name="submit-btn" value="Cancel" class="btn btn-primary m-b-10 w-sm" ng-click="back()">
+                              <input type="submit" name="submit-btn" value="Save" class="btn btn-primary m-b-10 w-sm m-l-15">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

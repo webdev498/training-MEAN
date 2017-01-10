@@ -1,0 +1,171 @@
+<section ng-controller="TutorController">
+	<section class="m-t-20 m-b-30">
+    <div class="container">
+      <h2 class="text-page m-b-30"><strong>Tutor Adminstration</strong></h2>
+      <ul class="nav nav-tabs nav-justified">
+        <li class="active">
+          <a href="#students" data-toggle="tab" aria-expanded="false">
+          	<strong class="text-page">All Students</strong>
+          </a>
+        </li>
+        <li class="">
+          <a href="#courses" data-toggle="tab" aria-expanded="true">
+          	<strong class="text-page">All Courses</strong>
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="students">
+          <div class="text-right m-b-30">
+            <a href="/add-student" class="btn btn-primary w-sm m-r-5">Add Student</a>
+            <a href="javascript: void(0)" class="btn btn-primary w-sm m-r-5" ng-click="importFromCSV()">Import Students</a>
+            <button type="button" class="btn btn-primary w-sm" id="assign_course" data-toggle="modal" data-target="#select-course" ng-click="getStudentList()">Assign Course</button>
+            <input id="csvFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" name="CSVfile" ng-hide="true"/>
+          </div>
+          <div class="table-responsive">
+            <table class="table text-page">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>DOB</th>
+                  <th>Username</th>
+                  <th>Password</th>
+                  <th>Other</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tr ng-repeat = "student in students">
+                <td>
+                  <label class="cr-styled">
+                    <input type="checkbox" value="{{$index}}" name="selected_students">
+                    <i class="fa"></i>
+                  </label>
+                </td>
+                <td>
+                	<strong>{{student.firstName}}</strong>
+                </td>
+                <td>
+                	<strong>{{student.lastName}}</strong>
+                </td>
+                <td>
+                	<strong>{{student.dob}}</strong>
+                </td>
+                <td>
+                	<strong>{{student.username}}</strong>
+                </td>
+                <td>
+                	<strong>{{student.rawPassword}}</strong>
+                </td>
+                <td>
+                	<strong>other</strong>
+                </td>
+                <td class="text-right">
+                	<a href="javascript:void(0)" class="btn w-xs btn-sm btn-primary" ng-click="studentDetail(student._id)">Edit</a>
+                </td>
+							</tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="courses">
+          <div class="table-responsive">
+            <table class="table text-page">
+              <thead>
+                <tr>
+                  <th>Course Name</th>
+                  <th>Entrolled Students</th>
+                  <th>Pasted Students</th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tr ng-repeat = "course in courses">
+                <td>
+                	<strong>{{course.name}}</strong>
+                </td>
+                <td>
+                	<strong>{{getEnrolledStudents(course._id)}}</strong>
+                </td>
+                <td>{{getPastStudents(course._id)}}</td>
+                <td class="text-right">
+                	<a href="#" class="btn btn-primary w-sm" data-toggle="modal" data-target="#select-student">Assign Student</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+	</section>
+
+	<div id="select-course" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog"> 
+			<div class="modal-content"> 
+				<div class="modal-header"> 
+				 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> 
+				 <h4 class="modal-title">Assign a Course</h4>
+				</div> 
+				<div class="modal-body assign-text"> 
+				 <div class="row"> 
+				   <div class="col-md-12"> 
+					   <div class="form-group"> 
+						   <p>Click the arrow below to select a course and then click Assign.</p>
+					   </div> 
+				   </div> 
+				 </div> 
+				</div>
+				<div class="modal-footer">
+					<div class="row"> 
+						<div class="col-md-12"> 
+							<select name="" class="form-control input-lg" ng-change="updateDescription(courseName)" ng-model='courseName' ng-init="courseName = 'default'">
+								<option disabled value="default" selected="selected">Select the course</option>
+								<option ng-repeat = "course in courses" value="{{$index}}">{{course.name}}</option>
+							</select>
+						</div> 
+					</div>
+					<br><br>
+					<button type="button" class="btn btn-white" data-dismiss="modal">Close</button> 
+					<button class="btn btn-primary w-sm col-md-offset-5" ng-click="assignCourse()"><i class="fa fa-refresh fa-spin" ng-show="creatingCourseDetail" style="margin-right: 5px;"></i> Assign</button>
+				</div> 
+			</div> 
+		</div>
+	</div>
+
+	<div id="select-student" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog"> 
+			<div class="modal-content"> 
+				<div class="modal-header"> 
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> 
+					<h4 class="modal-title">Assign a Student</h4>
+				</div> 
+				<div class="modal-body assign-text"> 
+					<div class="row"> 
+						<div class="col-md-12"> 
+							<div class="form-group"> 
+								<p>Click the arrow below to select a student and then click Assign.</p>
+							</div> 
+						</div> 
+					</div> 
+					
+				</div> 
+				
+				<div class="modal-footer">
+					<div class="row"> 
+						<div class="col-md-12"> 
+							<select class="course-select">
+								<option>Student 1</option>
+								<option>Student 2</option>
+								<option>Student 3</option>
+							</select>
+						</div> 
+					</div> 
+				
+					<button type="button" class="btn btn-white" data-dismiss="modal">Close</button> 
+					<button type="button" class="btn btn-primary">Assign</button> 
+				</div> 
+			</div> 
+		</div>
+	</div>
+</section>
